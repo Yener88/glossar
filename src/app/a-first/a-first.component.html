@@ -1,0 +1,39 @@
+<div class="header">
+    <img src="assets/img/logo-maera.webp" alt="">
+</div>
+<div class="glossarTitle">
+    <div class="glossarTitleNew">NEW</div>
+    <div class="glossarTitleWork">WORK</div>
+    <div class="glossarTitleGlossar">GLOSSAR</div>
+</div>
+
+<div class="MainContent">
+    <!-- Alphabet-Navigation -->
+    <div class="alphaContent">
+        <div *ngFor="let letter of alphabet" class="alphaBox">
+            <a href="#{{letter}}">{{letter}}</a>
+        </div>
+    </div>
+    <!-- Einträge nach Alphabet anzeigen -->
+    <div class="letterBox" *ngFor="let letter of alphabet">
+        <!-- Überschrift für jeden Buchstaben -->
+        <div class="letterDirection" id="{{letter}}">
+            <div class="letterBeforeLine"></div>
+            <div class="letterAreaBySingle">{{letter}}</div>
+            <div class="letterAfterLine"></div>
+        </div>
+        <!-- Einträge für den aktuellen Buchstaben anzeigen -->
+        <div (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
+            [hidden]="entry.title[0].toUpperCase() !== letter">
+            <!-- Titel als anklickbaren Link -->
+            <div [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
+            <!-- Eintragdetails -->
+            <div *ngIf="entry.showDetails">
+                <img class="entryImg" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
+                <p>{{ entry.description }}</p>
+                <p class="creatorBox">Ersteller: {{ entry.creator }} - Datum: {{ entry.date }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
