@@ -54,15 +54,20 @@
             <div class="letterAfterLine"></div>
         </div>
         <!-- Einträge für den aktuellen Buchstaben anzeigen -->
-        <div (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
+        <div lang="de" (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
             [hidden]="entry.title[0].toUpperCase() !== letter">
             <!-- Titel als anklickbaren Link -->
             <div class="entryTitleHover" [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
             <!-- Eintragdetails -->
             <div *ngIf="entry.showDetails">
                 <img class="entryImg" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
-                <p>{{ entry.description }}</p>
-                <p class="creatorBox">Ersteller: {{ entry.creator }} - Datum: {{ entry.date }}</p>
+                <p class="entryDescription">{{ entry.description }}</p>
+                <div class="entryCreatorBox">
+                     
+                    <div>Ersteller: {{ entry.creator }}</div>
+                    <div>{{ entry.date }}</div>
+                
+                </div>
             </div>
         </div>
     </div>

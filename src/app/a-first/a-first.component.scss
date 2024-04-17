@@ -108,17 +108,26 @@
     margin-bottom: 20px;
     transition: all 225ms ease-in-out;
     width: 86vw;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-wrap: balance;
 }
 
 .entry:hover {
     box-shadow: rgba(255, 235, 205, 0.658) 0px -1px 11px 4px;
 }
+
 .entryTitleHover {
     transition: all 225ms ease-in-out;
 }
+
 .entryTitleHover:hover {
     transform: scale(1.03);
 }
+
 .entryImg {
     width: 50vw;
     max-width: 300px;
@@ -127,12 +136,25 @@
     margin-top: 30px;
 }
 
-.creatorBox {
+.entryDescription {
+    text-align: start;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-wrap: balance;
+}
+
+.entryCreatorBox {
     border-top: 1px solid black;
     margin-bottom: -5px;
     font-size: 1rem;
     text-align: justify;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -165,7 +187,6 @@ footer {
     padding: 3px;
     background-color: rgb(212, 192, 155);
 }
-
 
 // ##########################################################
 .glossarTitleMobile {
