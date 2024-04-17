@@ -147,6 +147,7 @@ footer {
     align-items: center;
 }
 
+// ##########################################################
 .glossarTitleMobile {
     text-align: center;
     font-size: 3rem;
@@ -160,8 +161,6 @@ footer {
     width: 100vw;
     height: 60vh;
 }
-
-// ##########################################################
 
 @media (max-width: 720px) {
     .hide-mobile {
@@ -191,7 +190,8 @@ footer {
     font-style: italic;
     letter-spacing: -2px;
     text-transform: uppercase;
-    margin-right: 150px;
+    margin-right: 250px;
+    text-align: center;
 }
 
 .perspective-line {
@@ -205,6 +205,8 @@ footer {
     height: 6vh;
     line-height: 6vh;
     transition: all 0.5s ease-in-out;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .perspective-line:nth-child(odd) {
