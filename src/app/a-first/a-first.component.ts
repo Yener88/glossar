@@ -34,20 +34,40 @@ export class AFirstComponent {
   }
 
   showGoToStartButton(): void {
-    this.goToStartButtonVisible = true;
-    this.resetHideTimeout();
+    if (!this.goToStartButtonVisible) {
+      this.goToStartButtonVisible = true;
+      this.resetHideTimeout();
+      setTimeout(() => {
+        this.setStyles('block', 1);
+      }, 10); // Kleine Verzögerung, um die Animation zu starten
+    }
   }
 
   hideGoToStartButton(): void {
-    this.goToStartButtonVisible = false;
-    clearTimeout(this.hideTimeout);
+    if (this.goToStartButtonVisible) {
+      this.goToStartButtonVisible = false;
+      clearTimeout(this.hideTimeout);
+      this.setStyles('block', 0);
+      setTimeout(() => {
+        this.setStyles('none', 0);
+      }, 500); // Verzögerung für die Animation
+    }
   }
 
   resetHideTimeout(): void {
     clearTimeout(this.hideTimeout);
     this.hideTimeout = setTimeout(() => {
       this.hideGoToStartButton();
-    }, 2000); // 5000 Millisekunden = 5 Sekunden
+    }, 2000); // 2000 Millisekunden = 2 Sekunden
+  }
+
+  setStyles(display: string, opacity: number): void {
+    const element = this.elementRef.nativeElement.querySelector('.goToStartButton');
+    if (element) {
+      (element as HTMLElement).style.display = display;
+      (element as HTMLElement).style.opacity = opacity.toString();
+      (element as HTMLElement).style.transition = 'opacity 1s ease'; // Übergangseffekt hinzufügen
+    }
   }
 
   // Alphabet-Array für die Buchstaben-Navigation

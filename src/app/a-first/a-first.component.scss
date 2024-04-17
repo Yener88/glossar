@@ -151,7 +151,7 @@ footer {
     position: fixed;
     bottom: -4px;
     right: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
     opacity: 0;
 }
 
@@ -165,20 +165,21 @@ footer {
     padding: 3px;
     background-color: rgb(212, 192, 155);
 }
-.goToStartButton.visible {
-    opacity: 1;
-}
+
 
 // ##########################################################
 .glossarTitleMobile {
     text-align: center;
     font-size: 3rem;
     font-weight: 600;
-
     color: black;
     margin-top: 50px;
 }
-
+.glossarTitleMobile img {
+    width: 60vw;
+    height: auto;
+    object-fit: cover;
+}
 .glossarTitleDesktop {
     width: 100vw;
     height: 60vh;
