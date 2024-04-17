@@ -110,7 +110,7 @@ export class AFirstComponent {
     },
     {
       title: "Burn-down Chart",
-      fullTitle: "was bedeutet Burn-down Chart",
+      fullTitle: "Was bedeutet Burn-down Chart",
       description: "Ein Burn-down Chart ist ein visuelles Hilfsmittel, das verwendet wird, um den Fortschritt eines Teams bei der Bearbeitung seiner Aufgaben während eines Entwicklungszyklus darzustellen. Es zeigt die verbleibende Arbeit über einen bestimmten Zeitraum an, normalerweise über die Dauer eines Sprints oder einer Iteration. Durch die Verfolgung der täglichen oder wöchentlichen Fortschritte können Teams Trends erkennen, Engpässe identifizieren und ihre Leistung im Laufe der Zeit verbessern.",
       creator: "Yener Bas",
       date: "18.04.2024",
