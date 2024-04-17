@@ -151,3 +151,21 @@ html, body {
   font-weight: 900;
   src: url('assets/fonts/exo-2-v21-latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.247);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.76);
+}
