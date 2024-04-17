@@ -13,27 +13,41 @@ export class AFirstComponent {
 
   goToStartButtonVisible: boolean = false;
   lastScrollPosition: number = 0;
-  delayThreshold: number = 150; // Verzögerungsschwelle in Pixel
+  showThreshold: number = 100; // Sichtbarkeitsschwelle beim Herunterscrollen in vh
+  hideThreshold: number = 150; // Ausblendeschwelle beim Hochscrollen in vh
+  hideTimeout: any; // Timeout-Variable für das Ausblenden des Pfeils
 
   constructor(private elementRef: ElementRef) { }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    this.checkVisibility(currentScrollPosition);
+    const isScrollingDown = currentScrollPosition > this.lastScrollPosition;
+
+    if (isScrollingDown && currentScrollPosition >= this.showThreshold) {
+      this.showGoToStartButton();
+    } else if (!isScrollingDown && currentScrollPosition <= this.hideThreshold) {
+      this.hideGoToStartButton();
+    }
+
     this.lastScrollPosition = currentScrollPosition;
   }
 
-  checkVisibility(currentScrollPosition: number): void {
-    const element = this.elementRef.nativeElement.querySelector('.mainContent');
-    if (element) {
-      const position = element.getBoundingClientRect();
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      const threshold = viewportHeight + this.delayThreshold; // Dynamischer Schwellenwert
-      const isScrollingDown = currentScrollPosition > this.lastScrollPosition;
-      const isContentVisible = position.top - viewportHeight + threshold <= 0;
-      this.goToStartButtonVisible = isContentVisible && isScrollingDown;
-    }
+  showGoToStartButton(): void {
+    this.goToStartButtonVisible = true;
+    this.resetHideTimeout();
+  }
+
+  hideGoToStartButton(): void {
+    this.goToStartButtonVisible = false;
+    clearTimeout(this.hideTimeout);
+  }
+
+  resetHideTimeout(): void {
+    clearTimeout(this.hideTimeout);
+    this.hideTimeout = setTimeout(() => {
+      this.hideGoToStartButton();
+    }, 2000); // 5000 Millisekunden = 5 Sekunden
   }
 
   // Alphabet-Array für die Buchstaben-Navigation
