@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,7 +11,30 @@ import { CommonModule } from '@angular/common';
 
 export class AFirstComponent {
 
-  constructor() { }
+  goToStartButtonVisible: boolean = false;
+  lastScrollPosition: number = 0;
+  delayThreshold: number = 150; // Verzögerungsschwelle in Pixel
+
+  constructor(private elementRef: ElementRef) { }
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    this.checkVisibility(currentScrollPosition);
+    this.lastScrollPosition = currentScrollPosition;
+  }
+
+  checkVisibility(currentScrollPosition: number): void {
+    const element = this.elementRef.nativeElement.querySelector('.mainContent');
+    if (element) {
+      const position = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const threshold = viewportHeight + this.delayThreshold; // Dynamischer Schwellenwert
+      const isScrollingDown = currentScrollPosition > this.lastScrollPosition;
+      const isContentVisible = position.top - viewportHeight + threshold <= 0;
+      this.goToStartButtonVisible = isContentVisible && isScrollingDown;
+    }
+  }
 
   // Alphabet-Array für die Buchstaben-Navigation
   alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -485,7 +508,7 @@ export class AFirstComponent {
       imageUrl: "assets/img/3.png",
       showDetails: false
     },
-  
+
     // Buchstabe Z
     {
       title: "Zero-Defect-Policy",

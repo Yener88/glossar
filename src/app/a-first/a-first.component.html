@@ -1,37 +1,43 @@
+<div id="startPoint"></div>
+
+<div class="goToStartButton" [ngClass]="{ 'visible': goToStartButtonVisible }">
+    <a href="#startPoint">
+        <img src="assets/img/arrow.png" alt="arrow">
+    </a>
+</div>
+
 <div class="glossarTitleMobile hide-desktop">
     <div>NEW WORK GLOSSAR</div>
 </div>
+
 <div class="glossarTitleDesktop  hide-mobile">
     <div class="glossarTitleDesktopBox">
         <div class="perspective-text">
-          <div class="perspective-line">
-            <p></p>
-            <p>New Work</p>
-          </div>
-          <div class="perspective-line">
-            <p>New Work</p>
-            <p>Glossar</p>
-          </div>
-          <div class="perspective-line">
-            <p>Glossar</p>
-            <p>Firma Gmbh</p>
-          </div>
-          <div class="perspective-line">
-            <p>Firma Gmbh</p>
-            <p>Encyclopedia</p>
-          </div>
-          <div class="perspective-line">
-            <p>Encyclopedia</p> 
-            <p></p>
-          </div>
+            <div class="perspective-line">
+                <p></p>
+                <p>New Work</p>
+            </div>
+            <div class="perspective-line">
+                <p>New Work</p>
+                <p>Glossar</p>
+            </div>
+            <div class="perspective-line">
+                <p>Glossar</p>
+                <p>Firma Gmbh</p>
+            </div>
+            <div class="perspective-line">
+                <p>Firma Gmbh</p>
+                <p>Encyclopedia</p>
+            </div>
+            <div class="perspective-line">
+                <p>Encyclopedia</p>
+                <p></p>
+            </div>
         </div>
     </div>
-
-
-
 </div>
 
-<div class="MainContent">
+<div class="mainContent">
     <!-- Alphabet-Navigation -->
     <div class="alphaContent">
         <div *ngFor="let letter of alphabet" class="alphaBox">
@@ -60,6 +66,7 @@
         </div>
     </div>
 </div>
+
 <footer>
     <h4>Copyright &copy; Yener Bas</h4>
 </footer>
