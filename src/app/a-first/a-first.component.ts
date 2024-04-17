@@ -34,31 +34,25 @@ export class AFirstComponent {
   }
 
   showGoToStartButton(): void {
-    if (!this.goToStartButtonVisible) {
-      this.goToStartButtonVisible = true;
-      this.resetHideTimeout();
-      setTimeout(() => {
-        this.setStyles('block', 1);
-      }, 10); // Kleine Verzögerung, um die Animation zu starten
-    }
+    this.goToStartButtonVisible = true;
+    this.resetHideTimeout();
+    this.setStyles('block', 1);
   }
 
   hideGoToStartButton(): void {
-    if (this.goToStartButtonVisible) {
-      this.goToStartButtonVisible = false;
-      clearTimeout(this.hideTimeout);
-      this.setStyles('block', 0);
-      setTimeout(() => {
-        this.setStyles('none', 0);
-      }, 500); // Verzögerung für die Animation
-    }
+    this.goToStartButtonVisible = false;
+    clearTimeout(this.hideTimeout);
+    this.setStyles('block', 0); // Opazität sofort auf 0 setzen
+    setTimeout(() => {
+      this.setStyles('none', 0); // nach einer kurzen Verzögerung die Anzeige auf "none" setzen
+    }, 500); // 500 Millisekunden Verzögerung für die Animation
   }
 
   resetHideTimeout(): void {
     clearTimeout(this.hideTimeout);
     this.hideTimeout = setTimeout(() => {
       this.hideGoToStartButton();
-    }, 2000); // 2000 Millisekunden = 2 Sekunden
+    }, 2500); // 2000 Millisekunden = 2 Sekunden
   }
 
   setStyles(display: string, opacity: number): void {
@@ -66,10 +60,10 @@ export class AFirstComponent {
     if (element) {
       (element as HTMLElement).style.display = display;
       (element as HTMLElement).style.opacity = opacity.toString();
-      (element as HTMLElement).style.transition = 'opacity 1s ease'; // Übergangseffekt hinzufügen
+      (element as HTMLElement).style.transition = 'opacity 0.5s ease'; // Übergangseffekt hinzufügen
     }
   }
-
+  
   // Alphabet-Array für die Buchstaben-Navigation
   alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
