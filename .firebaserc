@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "glossar-b9f3e"
+  },
+  "targets": {
+    "glossar-b9f3e": {
+      "hosting": {
+        "ency": [
+          "glossar-b9f3e"
+        ]
+      }
+    }
+  }
+}

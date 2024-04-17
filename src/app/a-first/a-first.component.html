@@ -1,10 +1,34 @@
-<div class="header">
-    <img src="assets/img/logo-maera.webp" alt="">
+<div class="glossarTitleMobile hide-desktop">
+    <div>NEW WORK GLOSSAR</div>
 </div>
-<div class="glossarTitle">
-    <div class="glossarTitleNew">NEW</div>
-    <div class="glossarTitleWork">WORK</div>
-    <div class="glossarTitleGlossar">GLOSSAR</div>
+<div class="glossarTitleDesktop  hide-mobile">
+    <div class="glossarTitleDesktopBox">
+        <div class="perspective-text">
+          <div class="perspective-line">
+            <p></p>
+            <p>New Work</p>
+          </div>
+          <div class="perspective-line">
+            <p>New Work</p>
+            <p>Glossar</p>
+          </div>
+          <div class="perspective-line">
+            <p>Glossar</p>
+            <p>Firma Gmbh</p>
+          </div>
+          <div class="perspective-line">
+            <p>Firma Gmbh</p>
+            <p>Agile Arbeitswelt</p>
+          </div>
+          <div class="perspective-line">
+            <p>Agile Arbeitswelt</p> 
+            <p></p>
+          </div>
+        </div>
+    </div>
+
+
+
 </div>
 
 <div class="MainContent">
@@ -26,7 +50,7 @@
         <div (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
             [hidden]="entry.title[0].toUpperCase() !== letter">
             <!-- Titel als anklickbaren Link -->
-            <div [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
+            <div class="entryTitleHover" [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
             <!-- Eintragdetails -->
             <div *ngIf="entry.showDetails">
                 <img class="entryImg" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
@@ -36,4 +60,6 @@
         </div>
     </div>
 </div>
-<footer></footer>
+<footer>
+    <h4>Copyright &copy; Yener Bas</h4>
+</footer>

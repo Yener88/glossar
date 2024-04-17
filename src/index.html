@@ -2,12 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ency</title>
+  <title>New Work Glossar</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/img/main-icon.png">
 </head>
 <body>
   <app-root></app-root>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBjjQMZprC_dv3xW7U2ZqY42shvEe9MBWo",
+      authDomain: "glossar-b9f3e.firebaseapp.com",
+      projectId: "glossar-b9f3e",
+      storageBucket: "glossar-b9f3e.appspot.com",
+      messagingSenderId: "621015728375",
+      appId: "1:621015728375:web:75338c7d2cf013ef6c93f2"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
