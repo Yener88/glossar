@@ -52,7 +52,7 @@ export class AFirstComponent {
     clearTimeout(this.hideTimeout);
     this.hideTimeout = setTimeout(() => {
       this.hideGoToStartButton();
-    }, 2500); // 2000 Millisekunden = 2 Sekunden
+    }, 4000); // 2000 Millisekunden = 2 Sekunden
   }
 
   setStyles(display: string, opacity: number): void {

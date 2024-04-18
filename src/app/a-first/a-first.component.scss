@@ -38,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .alphaBox a:hover {
@@ -60,6 +61,7 @@
     align-items: center;
     margin-bottom: 15px;
     margin-top: 15px;
+    user-select: none;
 }
 
 .letterDirection {
@@ -153,7 +155,7 @@
 footer {
     height: 100px;
     width: 100vw;
-    background-color: black;
+    background-color: rgb(31, 31, 31);
     font-weight: 100;
     font-size: 0.7rem;
     color: white;
@@ -168,17 +170,19 @@ footer {
     right: 0;
     transition: all 0.5s ease-in-out;
     opacity: 0;
-}
-
-.goToStartButton img {
-    width: 50px;
-    height: auto;
-    object-fit: cover;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-top-left-radius: 10px;
-    padding: 3px;
-    background-color: rgb(212, 192, 155);
+    img {
+        width: 50px;
+        height: auto;
+        object-fit: cover;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-top-left-radius: 10px;
+        padding: 3px;
+        background-color: rgb(212, 192, 155);
+        &:hover {
+            box-shadow: rgba(255, 235, 205, 0.658) 0px -1px 11px 4px;
+        }
+    }
 }
 
 // ##########################################################
@@ -188,15 +192,20 @@ footer {
     font-weight: 600;
     color: black;
     margin-top: 50px;
+    cursor: default;
+    user-select: none;
+    img {
+        width: 60vw;
+        height: auto;
+        object-fit: cover;
+    }
 }
-.glossarTitleMobile img {
-    width: 60vw;
-    height: auto;
-    object-fit: cover;
-}
+
 .glossarTitleDesktop {
     width: 100vw;
     height: 60vh;
+    user-select: none;
+    cursor: default;
 }
 
 @media (max-width: 720px) {
@@ -217,7 +226,6 @@ footer {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .perspective-text {
