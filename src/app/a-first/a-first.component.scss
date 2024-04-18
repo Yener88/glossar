@@ -27,10 +27,12 @@
 .alphaBox a {
     padding-left: 5px;
     padding-right: 5px;
+    padding-bottom: 3px;
     color: black;
     text-decoration: none;
     font-size: 2rem;
-    border: 2px solid black;
+    font-weight: 600;
+    border: 3px solid black;
     transition: all 0.3s ease;
     cursor: pointer;
     width: 30px;
@@ -160,8 +162,10 @@ footer {
     font-size: 0.7rem;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .goToStartButton {
@@ -171,17 +175,31 @@ footer {
     transition: all 0.5s ease-in-out;
     opacity: 0;
     img {
-        width: 50px;
+        width: 40px;
         height: auto;
         object-fit: cover;
-        border-top: 2px solid black;
-        border-left: 2px solid black;
-        border-top-left-radius: 10px;
-        padding: 3px;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        border-top-left-radius: 30px;
+        padding: 10px;
         background-color: rgb(212, 192, 155);
         &:hover {
             box-shadow: rgba(255, 235, 205, 0.658) 0px -1px 11px 4px;
         }
+    }
+}
+
+.kontaktButton{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px;
+    padding-top: 5px;
+    border-radius: 15px;
+    &:hover {
+        background-color: rgba(2255, 235, 205, 0.1);
+        box-shadow: rgba(255, 235, 205, 0.1) 0px -1px 11px 4px;
     }
 }
 
