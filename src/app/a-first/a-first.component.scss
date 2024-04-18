@@ -113,7 +113,6 @@
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    text-wrap: balance;
 }
 
 .entry:hover {
@@ -138,12 +137,6 @@
 
 .entryDescription {
     text-align: start;
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    text-wrap: balance;
 }
 
 .entryCreatorBox {
