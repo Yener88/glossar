@@ -13,12 +13,24 @@ export class AFirstComponent {
 
   goToStartButtonVisible: boolean = false;
   lastScrollPosition: number = 0;
-  showThreshold: number = 100; // Sichtbarkeitsschwelle beim Herunterscrollen in vh
-  hideThreshold: number = 150; // Ausblendeschwelle beim Hochscrollen in vh
-  hideTimeout: any; // Timeout-Variable für das Ausblenden des Pfeils
+  showThreshold: number = 100;
+  hideThreshold: number = 150;
+  hideTimeout: any;
+  alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   constructor(private elementRef: ElementRef) { }
 
+  // Funktion zum Umschalten der Eintragsdetails
+  openEntry(entry: any): void {
+    entry.showDetails = !entry.showDetails;
+  }
+
+  // Funktion für Bold des Titels innerhalb von fullTitle
+  makeGlossarEntryTitleBold(fullTitle: string, title: string): string {
+    return fullTitle.replace(new RegExp(title, 'gi'), `<b>${title}</b>`);
+  }
+
+  // der goToStartButton Bereich
   @HostListener('window:scroll', [])
   onScroll(): void {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -42,17 +54,17 @@ export class AFirstComponent {
   hideGoToStartButton(): void {
     this.goToStartButtonVisible = false;
     clearTimeout(this.hideTimeout);
-    this.setStyles('block', 0); // Opazität sofort auf 0 setzen
+    this.setStyles('block', 0); 
     setTimeout(() => {
-      this.setStyles('none', 0); // nach einer kurzen Verzögerung die Anzeige auf "none" setzen
-    }, 500); // 500 Millisekunden Verzögerung für die Animation
+      this.setStyles('none', 0);
+    }, 500);
   }
 
   resetHideTimeout(): void {
     clearTimeout(this.hideTimeout);
     this.hideTimeout = setTimeout(() => {
       this.hideGoToStartButton();
-    }, 4000); // 2000 Millisekunden = 2 Sekunden
+    }, 4000);
   }
 
   setStyles(display: string, opacity: number): void {
@@ -60,24 +72,11 @@ export class AFirstComponent {
     if (element) {
       (element as HTMLElement).style.display = display;
       (element as HTMLElement).style.opacity = opacity.toString();
-      (element as HTMLElement).style.transition = 'opacity 225ms ease'; // Übergangseffekt hinzufügen
+      (element as HTMLElement).style.transition = 'opacity 225ms ease-in-out';
     }
   }
-  
-  // Alphabet-Array für die Buchstaben-Navigation
-  alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  // Funktion zum Umschalten der Eintragsdetails
-  toggleDetails(entry: any): void {
-    entry.showDetails = !entry.showDetails;
-  }
-
-  // Funktion für Bold des Titels innerhalb von fullTitle
-  makeTitleBold(fullTitle: string, title: string): string {
-    return fullTitle.replace(new RegExp(title, 'gi'), `<b>${title}</b>`);
-  }
-
-  // Einträge
+  // Einträge 
   entries: any[] = [
     // Buchstabe A
     {

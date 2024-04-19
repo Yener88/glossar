@@ -1,32 +1,32 @@
-<header class="glossarTitle" id="startPoint">
+<header id="startPoint">
     <img src="assets/img/main-logo.png" alt="Main Logo">
     <div>NEW WORK GLOSSAR</div>
 </header>
-<div class="mainContent">
+<div class="glossar">
     <!-- Alphabet-Navigation -->
-    <div class="alphaContent">
-        <div *ngFor="let letter of alphabet" class="alphaBox">
+    <div class="glossarAlphabetNavigation">
+        <div *ngFor="let letter of alphabet" class="glossarAlphabetNavigationBox">
             <a href="#{{letter}}">{{letter}}</a>
         </div>
     </div>
     <!-- Einträge nach Alphabet anzeigen -->
-    <div class="letterBox" *ngFor="let letter of alphabet">
+    <div class="glossarContent" *ngFor="let letter of alphabet">
         <!-- Überschrift für jeden Buchstaben -->
-        <div class="letterDirection" id="{{letter}}">
-            <div class="letterBeforeLine"></div>
-            <div class="letterAreaBySingle">{{letter}}</div>
-            <div class="letterAfterLine"></div>
+        <div class="glossarContentSeperateByLetter" id="{{letter}}">
+            <div class="glossarContentSeperateByLetterBoxBeforeLine"></div>
+            <div class="glossarContentSeperateByLetterBox">{{letter}}</div>
+            <div class="glossarContentSeperateByLetterBoxAfterLine"></div>
         </div>
         <!-- Einträge für den aktuellen Buchstaben anzeigen -->
-        <div lang="de" (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
+        <div lang="de" (click)="openEntry(entry)" *ngFor="let entry of entries" class="glossarContentEntry"
             [hidden]="entry.title[0].toUpperCase() !== letter">
             <!-- Titel als anklickbaren Link -->
-            <div [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
+            <div [innerHTML]="makeGlossarEntryTitleBold(entry.fullTitle, entry.title)"></div>
             <!-- Eintragdetails -->
             <div *ngIf="entry.showDetails">
-                <img class="entryImg" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
-                <p class="entryDescription">{{ entry.description }}</p>
-                <div class="entryCreatorBox">
+                <img class="glossarContentEntryImage" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
+                <p class="glossarContentEntryDescription">{{ entry.description }}</p>
+                <div class="glossarContentEntryCreatorBox">
                     <div>Ersteller: {{ entry.creator }}</div>
                     <div>{{ entry.date }}</div>
                 </div>
@@ -36,7 +36,7 @@
 </div>
 <footer>
     <h4>Developer Project by Yener Bas &copy; 2024</h4>
-    <a class="kontaktButton" href="https://www.yener-bas.de" target="_blank">Kontakt</a>
+    <a class="footerContactButton" href="https://www.yener-bas.de" target="_blank">Kontakt</a>
 </footer>
 <!-- Button rechts unten um per klick zum Anfang der Seite zu Scrollen -->
 <div class="goToStartButton" [ngClass]="{ 'visible': goToStartButtonVisible }">
