@@ -1,12 +1,16 @@
 html, body {
     scroll-behavior: smooth;
     font-family: 'Exo 2';
-    background-color: rgb(212, 192, 155);
+    background-color: 	#deb887;
     margin: 0;
     padding: 0;
     transition: all 225ms ease-in-out;
     overflow-x: hidden;
-}
+    color: #161616;
+}	
+
+// #FFD39B
+
 /* exo-2-100 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

@@ -60,7 +60,7 @@ export class AFirstComponent {
     if (element) {
       (element as HTMLElement).style.display = display;
       (element as HTMLElement).style.opacity = opacity.toString();
-      (element as HTMLElement).style.transition = 'opacity 0.5s ease'; // Übergangseffekt hinzufügen
+      (element as HTMLElement).style.transition = 'opacity 225ms ease'; // Übergangseffekt hinzufügen
     }
   }
   

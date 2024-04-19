@@ -6,36 +6,9 @@
     </a>
 </div>
 
-<div class="glossarTitleMobile hide-desktop">
+<div class="glossarTitle">
     <img src="assets/img/main-logo.png" alt="Main Logo">
     <div>NEW WORK GLOSSAR</div>
-</div>
-
-<div class="glossarTitleDesktop  hide-mobile">
-    <div class="glossarTitleDesktopBox">
-        <div class="perspective-text">
-            <div class="perspective-line">
-                <p></p>
-                <p>New Work</p>
-            </div>
-            <div class="perspective-line">
-                <p>New Work</p>
-                <p>Glossar</p>
-            </div>
-            <div class="perspective-line">
-                <p>Glossar</p>
-                <p>Firma Gmbh</p>
-            </div>
-            <div class="perspective-line">
-                <p>Firma Gmbh</p>
-                <p>Encyclopedia</p>
-            </div>
-            <div class="perspective-line">
-                <p>Encyclopedia</p>
-                <p></p>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="mainContent">
@@ -57,7 +30,7 @@
         <div lang="de" (click)="toggleDetails(entry)" *ngFor="let entry of entries" class="entry"
             [hidden]="entry.title[0].toUpperCase() !== letter">
             <!-- Titel als anklickbaren Link -->
-            <div class="entryTitleHover" [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
+            <div [innerHTML]="makeTitleBold(entry.fullTitle, entry.title)"></div>
             <!-- Eintragdetails -->
             <div *ngIf="entry.showDetails">
                 <img class="entryImg" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
