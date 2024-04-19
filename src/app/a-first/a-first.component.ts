@@ -35,13 +35,11 @@ export class AFirstComponent {
   onScroll(): void {
     const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     const isScrollingDown = currentScrollPosition > this.lastScrollPosition;
-
     if (isScrollingDown && currentScrollPosition >= this.showThreshold) {
       this.showGoToStartButton();
     } else if (!isScrollingDown && currentScrollPosition <= this.hideThreshold) {
       this.hideGoToStartButton();
     }
-
     this.lastScrollPosition = currentScrollPosition;
   }
 
