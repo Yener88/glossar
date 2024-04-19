@@ -40,9 +40,16 @@
     justify-content: center;
     align-items: center;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
     &:hover {
         background-color: #ffd39b;
         box-shadow: #ffd39b 0px -1px 11px 4px;
+        -webkit-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -moz-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -ms-box-shadow: #ffd39b 0px -1px 11px 4px;
     }
 }
 
@@ -62,6 +69,9 @@
     margin-bottom: 15px;
     margin-top: 15px;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .letterDirection {
@@ -104,6 +114,9 @@
     overflow: hidden;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 20px;
@@ -117,6 +130,9 @@
     hyphens: auto;
     &:hover {
         box-shadow: #ffd39b 0px -1px 11px 4px;
+        -webkit-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -moz-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -ms-box-shadow: #ffd39b 0px -1px 11px 4px;
         transform: scale(1.005);
     }
 }
@@ -156,6 +172,9 @@ footer {
     justify-content: center;
     align-items: center;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .goToStartButton {
@@ -175,6 +194,9 @@ footer {
         background-color: #ffd39b;
         &:hover {
             box-shadow: #ffd39b 0px -1px 11px 4px;
+            -webkit-box-shadow: #ffd39b 0px -1px 11px 4px;
+            -moz-box-shadow: #ffd39b 0px -1px 11px 4px;
+            -ms-box-shadow: #ffd39b 0px -1px 11px 4px;
         }
     }
 }
@@ -190,6 +212,9 @@ footer {
     &:hover {
         background-color: rgba(2255, 235, 205, 0.1);
         box-shadow: rgba(255, 235, 205, 0.1) 0px -1px 11px 4px;
+        -webkit-box-shadow: rgba(255, 235, 205, 0.1) 0px -1px 11px 4px;
+        -moz-box-shadow: rgba(255, 235, 205, 0.1) 0px -1px 11px 4px;
+        -ms-box-shadow: rgba(255, 235, 205, 0.1) 0px -1px 11px 4px;
     }
 }
 
@@ -197,6 +222,9 @@ footer {
     margin-top: 50px;
     cursor: default;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     text-align: center;
     img {
         width: 70vw;
@@ -204,6 +232,9 @@ footer {
         height: auto;
         object-fit: cover;
         box-shadow: #ffd39b 0px -1px 11px 4px;
+        -webkit-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -moz-box-shadow: #ffd39b 0px -1px 11px 4px;
+        -ms-box-shadow: #ffd39b 0px -1px 11px 4px;
         border-radius: 100%;
     }
     div {
