@@ -1,16 +1,7 @@
-<div id="startPoint"></div>
-
-<div class="goToStartButton" [ngClass]="{ 'visible': goToStartButtonVisible }">
-    <a href="#startPoint">
-        <img src="assets/img/arrow.png" alt="arrow">
-    </a>
-</div>
-
-<div class="glossarTitle">
+<header class="glossarTitle" id="startPoint">
     <img src="assets/img/main-logo.png" alt="Main Logo">
     <div>NEW WORK GLOSSAR</div>
-</div>
-
+</header>
 <div class="mainContent">
     <!-- Alphabet-Navigation -->
     <div class="alphaContent">
@@ -43,8 +34,13 @@
         </div>
     </div>
 </div>
-
 <footer>
     <h4>Developer Project by Yener Bas &copy; 2024</h4>
     <a class="kontaktButton" href="https://www.yener-bas.de" target="_blank">Kontakt</a>
 </footer>
+<!-- Button rechts unten um per klick zum Anfang der Seite zu Scrollen -->
+<div class="goToStartButton" [ngClass]="{ 'visible': goToStartButtonVisible }">
+    <a href="#startPoint">
+        <img src="assets/img/arrow.png" alt="arrow">
+    </a>
+</div>
