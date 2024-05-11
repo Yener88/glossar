@@ -377,7 +377,7 @@ export class AFirstComponent {
       description: "Priorisierung bezeichnet den Prozess der Festlegung der Reihenfolge oder Bedeutung von Aufgaben, Anforderungen oder Features basierend auf ihren relativen Werten oder Kriterien. In agilen Methoden wie Scrum oder Kanban erfolgt die Priorisierung häufig durch das Product Owner oder das Team, wobei Faktoren wie Kundennutzen, Geschäftswert, Risiko und Abhängigkeiten berücksichtigt werden. Eine klare Priorisierung hilft dabei, Ressourcen effektiv zu nutzen, Engpässe zu minimieren und den maximalen Nutzen aus den verfügbaren Ressourcen zu ziehen.",
       creator: "Yener Bas",
       date: "16.05.2024",
-      imageUrl: "assets/img/3.png",
+      imageUrl: "assets/img/1.png",
       showDetails: false
     },
     // Buchstabe Q

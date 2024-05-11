@@ -23,9 +23,13 @@
             <!-- Titel als anklickbaren Link -->
             <div [innerHTML]="makeGlossarEntryTitleBold(entry.fullTitle, entry.title)"></div>
             <!-- Eintragdetails -->
-            <div *ngIf="entry.showDetails">
-                <img class="glossarContentEntryImage" *ngIf="entry.imageUrl" [src]="entry.imageUrl" alt="Beitragsbild">
-                <p class="glossarContentEntryDescription">{{ entry.description }}</p>
+            <div class="glossarDetails" *ngIf="entry.showDetails">
+                <div>
+                    <div class="glossarContentEntryImageShape">
+                    <img class="glossarContentEntryImage" *ngIf="entry.imageUrl" [src]="entry.imageUrl"
+                        alt="Beitragsbild"></div>
+                    <p class="glossarContentEntryDescription">{{ entry.description }}</p>
+                </div>
                 <div class="glossarContentEntryCreatorBox">
                     <div>Ersteller: {{ entry.creator }}</div>
                     <div>{{ entry.date }}</div>

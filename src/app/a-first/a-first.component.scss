@@ -156,12 +156,15 @@ header {
     margin-top: 20px;
     margin-bottom: 20px;
     transition: all 225ms ease-in-out;
-    width: 86vw;
+    width: 85vw;
+    max-width: 1200px;
+    height: auto;
     word-break: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+
     &:hover {
         box-shadow: #ffd39b 0px -1px 11px 4px;
         -webkit-box-shadow: #ffd39b 0px -1px 11px 4px;
@@ -171,17 +174,39 @@ header {
     }
 }
 
-.glossarContentEntryImage {
+.glossarDetails {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+.glossarContentEntryImageShape {
+    max-width: 350px;
     width: 80vw;
-    max-width: 300px;
+    height: max-content;
+    shape-outside: ellipse(210px 200px at 40% 50%);
+    float: left;
+    @media (max-width: 550px) {
+        shape-outside: none;
+        float: none;
+    }
+}
+
+.glossarContentEntryImage {
     height: auto;
-    object-fit: cover;
+    width: 300px;
+    object-fit: contain;
+    filter: drop-shadow(10px 7px 10px white);
+    @media (max-width: 550px) {
+        width: 83vw;
+    }
 }
 
 .glossarContentEntryDescription {
     text-align: start;
     margin: 0;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .glossarContentEntryCreatorBox {
